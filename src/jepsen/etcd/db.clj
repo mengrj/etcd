@@ -202,9 +202,9 @@
       (let [version (:version test)]
         (info node "installing etcd" version)
         (c/su
-          (let [url (str "https://github.com/mengrj/etcd/tree/version/package/v" version
+          (let [url (str "https://github.com/mengrj/etcd/raw/version/package/v" version
                         "/etcd-v" version "-linux-amd64.tar.gz")]
-          ;(let [url (str "https://github.com/mengrj/etcd/blob/version/package/etcd-modify-linux-amd64.tar.gz")]
+          ;(let [url (str "https://github.com/mengrj/etcd/raw/version/package/etcd-modify-linux-amd64.tar.gz")]
             (cu/install-archive! url dir))))
       (db/start! db test node)
 
